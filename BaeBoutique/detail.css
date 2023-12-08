@@ -128,6 +128,32 @@ text-color {
     width:100px;
     height:100px
 }
+/* Mặc định ẩn phần tử tiêu đề và giá */
+.similar-product .title,
+.similar-product .price {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hiển thị phần tử tiêu đề và giá khi hover vào .similar-product */
+.similar-product:hover .title,
+.similar-product:hover .price {
+    opacity: 1;
+}
+/* Khi hover, phần tử sẽ phóng to 105% */
+.similar-product:hover {
+    transform: scale(1.05);
+}
+
+/* Khi hover, phần tử sẽ có màu nền xám nhạt */
+.similar-product:hover {
+    background-color: #f5f5f5; /* Mã màu xám nhạt */
+}
+
+/* Khi hover, phần tử sẽ có viền xám */
+.similar-product:hover {
+    border-color: #ccc; /* Mã màu xám */
+}
 
 
 
