@@ -104,7 +104,7 @@
                             <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858753_960_720.jpg" alt="ProductS">
                             <div class="zoomed-image"></div>
                         </div>
-                        <div class="row my-3 previews">
+                        <!-- <div class="row my-3 previews">
                             <div class="col-md-3">
                                 <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
                             </div>
@@ -117,7 +117,36 @@
                             <div class="col-md-3">
                                 <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/37/model-858748_960_720.jpg" alt="Sale">
                             </div>
-                        </div>
+                        </div> -->
+
+                        <div class="slider-container" style="margin-top: 15px;">
+                            <div class="slides">
+                              <!-- Thêm ảnh vào đây -->
+                              <div class="slide">
+                                <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
+                              </div>
+                              <div class="slide">
+                                <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
+                              </div>
+                              <div class="slide">
+                                <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
+                              </div>
+                              <div class="slide">
+                                <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
+                              </div>
+                              <div class="slide">
+                                <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
+                              </div>
+                              <div class="slide">
+                                <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
+                              </div>
+                              <!-- Thêm các ảnh khác vào đây -->
+                            </div>
+                            <!-- Nút điều hướng -->
+                            <button class="prev-btn">&#10094;</button>
+                            <button class="next-btn">&#10095;</button>
+                          </div>
+                          
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -140,7 +169,7 @@
     
                         <div class="buttons d-flex my-5">
                             <div class="block">
-                                <a href="#" class="shadow btn custom-btn ">Wishlist</a>
+                                <a href="buy.html" class="shadow btn custom-btn ">Wishlist</a>
                             </div>
                             <div class="block">
                                 <button class="shadow btn custom-btn">Add to cart</button>
@@ -171,9 +200,19 @@
                     </div>
     
                     <div class="delivery my-4">
-                        <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-truck"></i></span> <b>Delivery done in 3 days from date of purchase</b> </p>
-                        <p class="text-secondary">Order now to get this product delivery</p>
-                    </div>
+                        <p class="font-weight-bold mb-0">
+                          <span><i class="fa-solid fa-truck"></i></span>
+                          <b>Delivery done in 3 days from date of purchase</b>
+                          <button class="expand-btn" style="border: none;" >+</button>
+                        </p>
+                        <div class="additional-info" style="margin-top: 5px;">
+                            <p class="text-secondary ">Order now to get this product delivery</p>
+                            <p class="text-secondary ">Order now to get this product delivery</p>
+                            <p class="text-secondary ">Order now to get this product delivery</p>
+
+                        </div>
+                      </div>
+                      
                     <div class="delivery-options my-4">
                         <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-filter"></i></span> <b>Delivery options</b> </p>
                         <p class="text-secondary">View delivery options here</p>
@@ -259,7 +298,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const slider = document.querySelector('.slides');
+  let slideIndex = 0;
 
+  prevBtn.addEventListener('click', function() {
+    slideIndex = (slideIndex <= 0) ? 0 : slideIndex - 1;
+    slider.style.transform = `translateX(-${slideIndex * 33.33}%)`; /* Thay đổi giá trị chiều rộng slide */
+  });
+
+  nextBtn.addEventListener('click', function() {
+    const slidesCount = document.querySelectorAll('.slide').length;
+    slideIndex = (slideIndex >= slidesCount - 3) ? slidesCount - 3 : slideIndex + 1; /* Hiển thị 3 ảnh */
+    slider.style.transform = `translateX(-${slideIndex * 33.33}%)`;
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const expandBtn = document.querySelector('.expand-btn');
+  const additionalInfo = document.querySelector('.additional-info');
+
+  expandBtn.addEventListener('click', function() {
+    if (additionalInfo.style.display === 'none') {
+      additionalInfo.style.display = 'block';
+    } else {
+      additionalInfo.style.display = 'none';
+    }
+  });
+});
 
  
 </script>

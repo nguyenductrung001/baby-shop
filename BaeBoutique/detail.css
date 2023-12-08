@@ -154,6 +154,46 @@ text-color {
 .similar-product:hover {
     border-color: #ccc; /* Mã màu xám */
 }
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    min-width: 33.33%; /* Chỉnh sửa chiều rộng của mỗi ảnh */
+  }
+  
+  /* Điều hướng */
+  .prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 48px;
+  }
+  
+  .prev-btn {
+    left: 0;
+  }
+  
+  .next-btn {
+    right: 0;
+  }
+  .slide{
+    margin-right: 10px;
+  }
+  .additional-info {
+    display: none;
+  }
+  
 
 
 
